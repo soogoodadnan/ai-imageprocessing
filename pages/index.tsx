@@ -16,7 +16,7 @@ export default function Home() {
     if(!event.target.elements.search.value) return;
     const configuration = new Configuration({
       organization: "org-J8Ao5OrhgS3EwoQyEB1s3afN",
-      apiKey: "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",
+      apiKey: "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",
     });
     const openai = new OpenAIApi(configuration);
     await openai.createImage({
