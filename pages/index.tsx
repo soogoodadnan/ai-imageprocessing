@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Head from 'next/head'
 import Image from 'next/image'
 import { useState } from "react";
@@ -51,9 +52,8 @@ export default function Home() {
         </form>
 
         {urls && <div className={styles.boxcontainer}>
-          <Image 
-            loader={urls}
-            src=""
+          <img 
+            src={urls}
             alt="Image url"
             width={500}
             height={500}
