@@ -54,9 +54,7 @@ export default function Home() {
         {urls && <div className={styles.boxcontainer}>
           <img 
             src={urls}
-            alt="Image url"
-            width={500}
-            height={500}
+            style={{ height: "500px", width: "500px", margin: "auto" }} alt="njm" 
             />
           <div className={styles.ahrehtag}>
             <a href={urls} target="_blank" rel="noreferrer"  >Visit Url</a>
