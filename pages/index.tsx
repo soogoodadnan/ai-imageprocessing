@@ -4,13 +4,12 @@ import { useState } from "react";
 import { Configuration, OpenAIApi } from "openai";
 import { Inter } from '@next/font/google'
 import styles from '../styles/Home.module.css'
-import { text } from 'stream/consumers';
 
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
-  const [urls, setUrls] = useState();
+  const [urls, setUrls] = useState<any | null>();
 
   const generateImage = async (event: any) => {
     event.preventDefault();
