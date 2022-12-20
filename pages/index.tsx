@@ -5,6 +5,8 @@ import { useState } from "react";
 import { Configuration, OpenAIApi } from "openai";
 import { Inter } from '@next/font/google'
 import styles from '../styles/Home.module.css'
+import NProgress from 'nprogress'; //nprogress module
+import 'nprogress/nprogress.css'; //styles of nprogress
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -15,6 +17,7 @@ export default function Home() {
   const generateImage = async (event: any) => {
     event.preventDefault();
     if(!event.target.elements.search.value) return;
+    NProgress.start()
     const configuration = new Configuration({
       organization: "org-J8Ao5OrhgS3EwoQyEB1s3afN",
       apiKey: "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",
@@ -28,6 +31,10 @@ export default function Home() {
       console.log(res.data.data[0].url);
       const newUrl: string = res.data.data[0].url;
       setUrls(newUrl);
+      NProgress.done();
+    })
+    .catch(err=>{
+      NProgress.done();
     });
 
   }
