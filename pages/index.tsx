@@ -17,7 +17,7 @@ export default function Home() {
     if(!event.target.elements.search.value) return;
     const configuration = new Configuration({
       organization: "org-J8Ao5OrhgS3EwoQyEB1s3afN",
-      apiKey: "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",
+      apiKey: "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",
     });
     const openai = new OpenAIApi(configuration);
     await openai.createImage({
@@ -52,7 +52,13 @@ export default function Home() {
         </form>
 
         {urls && <div className={styles.boxcontainer}>
-          <img src={urls} style={{ height: "500px", width: "500px", margin: "auto" }} alt="njm" />
+          <Image 
+            loader={urls}
+            src=""
+            alt="Image url"
+            width={500}
+            height={500}
+            />
           <div className={styles.ahrehtag}>
             <a href={urls} target="_blank" rel="noreferrer"  >Visit Url</a>
           </div>
